@@ -16,6 +16,7 @@
         <div class="col-10">
         <%= form.text_area :description,rows:7 , class:"form-control form-control-plaintext", :disabled => true%>
         <br>
+        <%= image_tag url_for(@article.image) ,class:"rounded mx-auto d-block", id:"article-image"%><br>
         <p>
         <% if @article.categories.any? %>
           <%= render @article.categories %>

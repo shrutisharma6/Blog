@@ -3,7 +3,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">Image</th>
+      
       <th scope="col">Username</th>
       <th scope="col">E-Mail</th>
       <th scope="col">No of articles</th>
@@ -14,7 +14,7 @@
   <tbody>
   <% @users.each do |u| %>
     <tr>
-        <td><%= link_to gravator_for(u,size:50)%></td>
+        
         <td><%= u.username%></td>
         <td><%= u.email%></td>
         <% if u.articles.count >0 %>

@@ -22,6 +22,7 @@ class ArticlesController < ApplicationController
 
     def create
         @article = Article.new(article_params)
+        @article.image.attach(params[:article][:image])
         @article.user = current_user
         if @article.save
             flash[:notice] = "Article was created successfully."
@@ -54,7 +55,7 @@ class ArticlesController < ApplicationController
         end
 
         def article_params
-            params.require(:article).permit(:title, :description, category_ids: [])
+            params.require(:article).permit(:title, :description, {category_ids: []}, :image)
             
         end
 
